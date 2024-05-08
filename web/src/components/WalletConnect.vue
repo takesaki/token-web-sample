@@ -111,7 +111,7 @@ const getContract = async() => {
     <v-row no-gutters align="center" justify="center">
       <v-spacer></v-spacer>
       <v-col cols="2">
-        {{ transferAmount }} {{ symbol }}
+        <span class="text-h4">{{ transferAmount }}</span> {{ symbol }}
       </v-col>
       <v-col cols="1">
         <v-icon>mdi-arrow-right-bold-outline</v-icon>
