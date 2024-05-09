@@ -4,7 +4,6 @@ import { BrowserProvider, Contract, formatUnits } from 'ethers'
 import { useWeb3ModalAccount, useWeb3ModalProvider } from '@web3modal/ethers/vue'
 
 
-import NetworkInfo from '../config/Network.json'
 import ContractInfo from '../config/NewToken.json'
 
 import token from './web3/contractwc'
@@ -19,7 +18,7 @@ let symbol = ref('');
 let message = ref('Connect with WalletConnect.');
 let myAmount = ref(0);
 let transferAmount = ref(10);
-let toAddress = ref('0x26f13a2aDdbd41D750C49cAc0984B0ea379C234a');
+let toAddress = ref(import.meta.env.VITE_DEFAULT_TO_ADDRESS);
 let dialog = ref(false);
 let canMint = ref(false);
 let ownerAddress = ref('');
@@ -79,7 +78,7 @@ const transfer = async() => {
 const getContract = async() => {
   const provider = new BrowserProvider(walletProvider.value!);
   const signer = await provider.getSigner();
-  const contract = new Contract(NetworkInfo.contractAddress, ContractInfo.abi, signer);
+  const contract = new Contract(token.ADDRESS, ContractInfo.abi, signer);
   return contract;
 }
 

@@ -5,7 +5,7 @@ import ContractInfo from '../../config/NewToken.json'
 const RPCEndpoint = 'https://' + NetworkInfo.rpcEndpoint;
 const WebSocketEndpoint = 'wss://polygon-amoy-bor-rpc.publicnode.com';
 
-const ADDRESS = NetworkInfo.contractAddress;
+const ADDRESS = import.meta.env.VITE_CONTRACT_ADDRESS;
 const ABI = ContractInfo.abi;
 
 
@@ -39,6 +39,7 @@ const getTotalSupply = async () => {
 }
 
 export default {
+  ADDRESS,
   getContractObject,
   getBalance,
   getBalanceofID,
