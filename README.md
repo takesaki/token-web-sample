@@ -10,6 +10,7 @@
 
     `web/.env`に以下ファイルを{}部分を置き換えて作成
     ```env
+    VITE_WALLET_CONNECT_PROJECT_ID={ Wallet Connect Project ID }
     VITE_CONTRACT_ADDRESS={ YOUR Contract Address }
     VITE_DEFAULT_TO_ADDRESS={ 初期宛先アドレス }
     ```

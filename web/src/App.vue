@@ -4,7 +4,7 @@ import HelloWorld from './components/HelloWorld.vue'
 /// wallet connect /////
 import { createWeb3Modal, defaultConfig } from '@web3modal/ethers/vue'
 
-const projectId = '{YOUR_PROJECT_ID}'
+const projectId = import.meta.env.VITE_WALLET_CONNECT_PROJECT_ID
 
 // 2. Set chains
 const testnet = {
